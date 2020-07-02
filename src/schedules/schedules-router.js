@@ -7,12 +7,11 @@ const SchedulesRouter = express.Router()
 
 SchedulesRouter
   .route('/all')
-  .get((req, res, next) => {
+  .get((req, res) => {
     SchedulesService.getAllSchedules(req.app.get('db'))
       .then(Schedules => {
         res.json(Schedules)
       })
-      .catch(next)
   })
 
 SchedulesRouter
@@ -29,7 +28,7 @@ SchedulesRouter
   .get(jsonBodyParser,(req,res)=>{
     console.log(req.user)
     SchedulesService.getAllSchedulesbyUserId(req.app.get('db'),
-    req.user.id)
+    req.user.userid)
       .then(schedules=>{
         res.json(schedules)
       })
