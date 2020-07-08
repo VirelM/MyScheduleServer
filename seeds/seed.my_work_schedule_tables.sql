@@ -12,6 +12,6 @@ INSERT INTO stores ("location") VALUES
     ('Glendale');
 
 INSERT INTO users (userid, full_name, store, "password", "admin" ) VALUES
-    ('HopScotch21', 'Kevin Tran', 1,'$2a$12$tuLFr6coOQ7lBEnbO.ew5uR17w3XE.dBDhrS1nuxb.ZqkrVT5kuc.', TRUE);
+    ('HopScotch21', 'Kevin Tran', 1,'$2a$12$te0pC20uCY5660hDf4uHieR9dVQakdFSUxM97J4BGpqBltHFQQGuW', TRUE);
 
 COMMIT;
