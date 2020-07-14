@@ -31,8 +31,9 @@ authRouter
                                 error: 'Incorrect userid or password'
                             });
                         const sub = dbUser.userid;
+                        console.log(dbUser);
                         console.log(sub, 'herrro');
-                        console.log(dbUser.id, 'muahahaha')
+                        console.log(dbUser.id, 'muahahaha', dbUser.store)
                         const payload = { userid: dbUser.id };
                         res.send({
                             authToken: AuthService.createJwt(sub, payload),

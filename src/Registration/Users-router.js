@@ -11,7 +11,7 @@ const userRouter = express.Router();
 
     userRouter
     .route('')
-    .get((req,res,next)=>{
+    .get(requireAuth,jsonBodyParser,(req,res,next)=>{
         console.log(req.user)
         UsersService.getAllUsers(req.app.get('db'), req.user.store)
             .then(users=>res.json(users))
