@@ -12,6 +12,7 @@ const userRouter = express.Router();
     userRouter
     .route('')
     .get((req,res,next)=>{
+        console.log(req.user)
         UsersService.getAllUsers(req.app.get('db'))
             .then(users=>res.json(users))
             .catch(next)
