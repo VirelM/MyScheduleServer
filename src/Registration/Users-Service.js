@@ -2,11 +2,12 @@ const xss = require('xss')
 const bcrypt = require('bcryptjs')
 
 const UsersService = {
-    getAllUsers(db){
+    getAllUsers(db, store){
       return db
         .select('userid','full_name','store')
         .from('users')
-        .where('admin','false')
+        .where('admin', 'false')
+        .where('store', store)
     },
     postNewUser(db, newUser){
         return db

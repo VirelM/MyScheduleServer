@@ -13,7 +13,7 @@ const userRouter = express.Router();
     .route('')
     .get((req,res,next)=>{
         console.log(req.user)
-        UsersService.getAllUsers(req.app.get('db'))
+        UsersService.getAllUsers(req.app.get('db'), req.user.store)
             .then(users=>res.json(users))
             .catch(next)
     })
